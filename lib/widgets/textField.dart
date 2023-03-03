@@ -5,16 +5,19 @@ class CtextField extends StatelessWidget {
   final Color? backgroundColor;
   final String hint;
   final double raduis;
+  final Widget? prefixIcon;
   const CtextField(
       {super.key,
       this.backgroundColor,
       required this.hint,
-      this.raduis = 15.0});
+      this.raduis = 15.0,
+      this.prefixIcon});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
+        prefixIcon: prefixIcon,
         filled: true,
         hintText: hint,
         hintStyle: TextStyle(

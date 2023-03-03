@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:next_one/config/config.dart';
 import 'package:next_one/config/functions.dart';
+import 'package:next_one/screens/contrat&condiction-page.dart';
 import 'package:next_one/widgets/textField.dart';
 import 'package:next_one/widgets/title.dart';
 
@@ -12,7 +13,7 @@ class RegisterPageAddPhoto extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          route(context, RegisterPageAddPhoto());
+          route(context, CondictionContratConfidentialite());
         },
         backgroundColor: Config.colors.primaryColor,
         child: const Icon(Icons.arrow_right_alt),

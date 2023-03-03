@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:next_one/config/config.dart';
 import 'package:next_one/config/functions.dart';
-import 'package:next_one/screens/login-page.dart';
-import 'package:next_one/screens/register-page.dart';
+import 'package:next_one/screens/auth/register-page.dart';
+import 'package:next_one/screens/auth/login-page.dart';
 import 'package:next_one/widgets/button.dart';
 
 class FirtPage extends StatelessWidget {
@@ -73,9 +73,9 @@ class FirtPage extends StatelessWidget {
                       SizedBox(
                         width: width(context) * 0.9,
                         child: Text(
-                          "vous permet de vous deplacez en toutes sereinité",
+                          "Se déplacer autrement",
                           style: TextStyle(
-                              fontSize: 35, color: Config.colors.whithColor),
+                              fontSize: 60, color: Config.colors.whithColor),
                         ),
                       )
                     ],

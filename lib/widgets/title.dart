@@ -6,7 +6,11 @@ import 'package:next_one/config/config.dart';
 class Ctitle extends StatelessWidget {
   final String title;
   final double size;
-  const Ctitle({super.key, required this.title, this.size = 32});
+  const Ctitle({
+    super.key,
+    required this.title,
+    this.size = 32,
+  });
 
   @override
   Widget build(BuildContext context) {

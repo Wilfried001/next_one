@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:next_one/config/config.dart';
 import 'package:next_one/config/functions.dart';
-import 'package:next_one/screens/forget-password-page.dart';
+import 'package:next_one/screens/auth/forget-password-page.dart';
+import 'package:next_one/screens/auth/register-page.dart';
 import 'package:next_one/screens/home-page.dart';
-import 'package:next_one/screens/register-page-name.dart';
 import 'package:next_one/widgets/button.dart';
 import 'package:next_one/widgets/textField.dart';
 import 'package:next_one/widgets/title.dart';
 
-class RegisterPage extends StatelessWidget {
-  RegisterPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
-  GlobalKey<FormState> _formKey = GlobalKey();
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
 
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,44 +33,54 @@ class RegisterPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Form(
-                key: _formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Ctitle(
-                      title: 'Saisissez votre numero de téléphone portable',
-                      size: 20,
-                    ),
-                    SizedBox(
-                      height: height(context) * 0.035,
-                    ),
-                    IntlPhoneField(
-                      decoration: InputDecoration(
-                        filled: true,
-                        hintText: 'Numéro de téléphone',
-                        hintStyle: TextStyle(
-                          color: Config.colors.hintColor,
-                          fontSize: 16,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Ctitle(
+                    title: 'Connexion',
+                  ),
+                  SizedBox(
+                    height: height(context) * 0.035,
+                  ),
+                  CtextField(
+                    hint: 'Adresse email',
+                  ),
+                  SizedBox(
+                    height: height(context) * 0.02,
+                  ),
+                  CtextField(
+                    hint: 'Mot de passe',
+                  ),
+                  SizedBox(
+                    height: height(context) * 0.015,
+                  ),
+                  SizedBox(
+                    width: width(context),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            route(context, ForgetPassword());
+                          },
+                          child: Text(
+                            "Mot de passe oubliez?",
+                            style: TextStyle(color: Config.colors.textColor),
+                          ),
                         ),
-                        fillColor: Config.colors.backgroundTextField,
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
+                      ],
                     ),
-                    SizedBox(
-                      height: height(context) * 0.025,
-                    ),
-                    CButton(
-                      onPressed: () {
-                        route(context, RegisterPageName());
-                      },
-                      title: 'Continuer',
-                    )
-                  ],
-                ),
+                  ),
+                  SizedBox(
+                    height: height(context) * 0.025,
+                  ),
+                  CButton(
+                    onPressed: () {
+                      route(context, HomePage());
+                    },
+                    title: 'Connexion',
+                  )
+                ],
               ),
               SizedBox(
                 height: height(context) * 0.02,
@@ -167,21 +179,26 @@ class RegisterPage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: height(context) * 0.24,
+                height: height(context) * 0.15,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Vous avez déja un compte?",
+                    "Vous n'avez pas de compte?",
                     style: TextStyle(color: Config.colors.textColor),
                   ),
                   SizedBox(
                     width: 3,
                   ),
-                  Text(
-                    "Connectez-vous",
-                    style: TextStyle(color: Config.colors.hoverColor),
+                  InkWell(
+                    onTap: () {
+                      route(context, RegisterPage());
+                    },
+                    child: Text(
+                      "Inscrivez-vous",
+                      style: TextStyle(color: Config.colors.hoverColor),
+                    ),
                   )
                 ],
               )
