@@ -193,7 +193,10 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   InkWell(
                     onTap: () {
-                      route(context, RegisterPage());
+                      route(
+                        context,
+                        RegisterPage(),
+                      );
                     },
                     child: Text(
                       "Inscrivez-vous",
