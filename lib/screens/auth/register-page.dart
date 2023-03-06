@@ -44,6 +44,7 @@ class RegisterPage extends StatelessWidget {
                       height: height(context) * 0.035,
                     ),
                     IntlPhoneField(
+                      initialCountryCode: 'CI',
                       decoration: InputDecoration(
                         filled: true,
                         hintText: 'Numéro de téléphone',

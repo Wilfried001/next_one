@@ -172,7 +172,7 @@ class _CondictionContratConfidentialiteState
                       ? CButton(
                           title: "Continuer",
                           onPressed: () {
-                            route(context, Reservations();, true);
+                            route(context, Reservations(), close: true);
                           },
                         )
                       : SizedBox(),

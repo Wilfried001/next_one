@@ -60,12 +60,27 @@ class FirtPage extends StatelessWidget {
                       SizedBox(
                         height: 30,
                       ),
-                      Text(
-                        "NEXT ONE",
-                        style: TextStyle(
-                            fontFamily: 'miltonia',
-                            fontSize: 40,
-                            color: Config.colors.secondaryColor),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "NEXT",
+                            style: TextStyle(
+                                fontFamily: 'miltonia',
+                                fontSize: 40,
+                                color: Config.colors.secondaryColor),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "ONE",
+                            style: TextStyle(
+                                fontFamily: 'miltonia',
+                                fontSize: 40,
+                                color: Config.colors.whithColor),
+                          ),
+                        ],
                       ),
                       SizedBox(
                         height: 30,
@@ -73,12 +88,16 @@ class FirtPage extends StatelessWidget {
                       SizedBox(
                         width: width(context) * 0.9,
                         child: Text(
+                          textAlign: TextAlign.center,
                           "Se déplacer autrement",
                           style: TextStyle(
-                              fontSize: 60, color: Config.colors.whithColor),
+                              fontSize: 25, color: Config.colors.whithColor),
                         ),
                       )
                     ],
+                  ),
+                  SizedBox(
+                    height: 30,
                   ),
                   Column(
                     children: [

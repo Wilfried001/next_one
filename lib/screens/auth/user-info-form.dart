@@ -25,49 +25,51 @@ class UserInfoForm extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            Ctitle(
-              title: "Informations Utilisateur",
-              size: 28,
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            Row(
-              children: <Widget>[
-                Expanded(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              Ctitle(
+                title: "Informations Utilisateur",
+                size: 28,
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Row(
+                children: <Widget>[
+                  Expanded(
+                      flex: 1,
+                      child: CtextField(
+                        raduis: 10,
+                        hint: "Nom",
+                      )),
+                  SizedBox(width: 5),
+                  Expanded(
                     flex: 1,
                     child: CtextField(
-                      raduis: 10,
-                      hint: "Nom",
-                    )),
-                SizedBox(width: 5),
-                Expanded(
-                  flex: 1,
-                  child: CtextField(
-                    hint: "Prénoms",
+                      hint: "Prénoms",
+                    ),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            CtextField(
-              raduis: 10,
-              hint: "adresse email",
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            CtextField(
-              raduis: 10,
-              hint: "Date de naissance",
-            ),
-          ],
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              CtextField(
+                raduis: 10,
+                hint: "adresse email",
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              CtextField(
+                raduis: 10,
+                hint: "Date de naissance",
+              ),
+            ],
+          ),
         ),
       ),
     );

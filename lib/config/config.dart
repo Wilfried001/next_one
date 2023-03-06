@@ -24,6 +24,10 @@ class _Asset {
   final google = "assets/images/google.png";
   final linkdin = "assets/images/linkdin.png";
   final undraw_terms = "assets/images/undraw_terms.svg";
+  final orangeMoney = "assets/images/orange.png";
+  final mtnMoney = "assets/images/MTN.jpg";
+  final moovMoney = "assets/images/moov.png";
+  final wave = "assets/images/wave.png";
 }
 
 class RadioTitleListeItem {

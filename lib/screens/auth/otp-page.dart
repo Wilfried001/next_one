@@ -22,75 +22,86 @@ class _VerifyPhoneOtpState extends State<VerifyPhoneOtp> {
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
-      body: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "NEXT",
-                style: TextStyle(
-                  fontSize: 36,
-                  fontFamily: "notable",
-                  color: Config.colors.primaryColor,
-                ),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Text(
-                "ONE",
-                style: TextStyle(
-                  fontSize: 36,
-                  fontFamily: "notable",
-                  color: Config.colors.secondaryColor,
-                ),
-              )
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          SizedBox(
-            width: width(context) * 0.8,
-            child: Text(
-              "Veuillez saisir le code envoyé par sms au +225 05 0* ** ** 19",
-              style: TextStyle(fontSize: 18),
-            ),
-          ),
-          SizedBox(
-            height: 30,
-          ),
-          SizedBox(
-            width: width(context) * 0.8,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _textFieldOTP(first: true, last: false),
-                _textFieldOTP(first: false, last: false),
-                _textFieldOTP(first: false, last: false),
-                _textFieldOTP(first: false, last: true),
+                Text(
+                  "NEXT",
+                  style: TextStyle(
+                    fontSize: 36,
+                    fontFamily: "notable",
+                    color: Config.colors.primaryColor,
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  "ONE",
+                  style: TextStyle(
+                    fontSize: 36,
+                    fontFamily: "notable",
+                    color: Config.colors.secondaryColor,
+                  ),
+                )
               ],
             ),
-          ),
-          SizedBox(
-            height: 30,
-          ),
-          CButton(
-            title: "Suivant",
-            onPressed: () {
-              route(context, UserInfoForm());
-            },
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          CButton(
-              title: "Envoyer un autre code 00:24",
-              onPressed: () {},
-              color: Config.colors.secondaryColor,
-              titleColor: Config.colors.primaryColor),
-        ],
+            SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              width: width(context) * 0.8,
+              child: Text(
+                "Veuillez saisir le code envoyé par sms au +225 05 0* ** ** 19",
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _textFieldOTP(first: true, last: false),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  _textFieldOTP(first: false, last: false),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  _textFieldOTP(first: false, last: false),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  _textFieldOTP(first: false, last: true),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            CButton(
+              title: "Suivant",
+              onPressed: () {
+                route(context, UserInfoForm());
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            CButton(
+                title: "Envoyer un autre code 00:24",
+                onPressed: () {},
+                color: Config.colors.secondaryColor,
+                titleColor: Config.colors.primaryColor),
+          ],
+        ),
       ),
     );
   }

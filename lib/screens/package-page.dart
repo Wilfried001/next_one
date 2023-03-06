@@ -24,37 +24,43 @@ class _ChosePackageState extends State<ChosePackage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "NEXT",
+              style: TextStyle(
+                  fontFamily: "miltonia",
+                  fontSize: 30,
+                  color: Config.colors.textColor),
+            ),
+            SizedBox(
+              width: 3,
+            ),
+            Text(
+              "ONE",
+              style: TextStyle(
+                  fontFamily: "miltonia",
+                  fontSize: 30,
+                  color: Config.colors.secondaryColor),
+            ),
+          ],
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(color: Config.colors.primaryColor),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding:
-              const EdgeInsets.only(top: 30.0, right: 20, left: 20, bottom: 20),
+              const EdgeInsets.only(top: 10.0, right: 20, left: 20, bottom: 20),
           child: SizedBox(
             width: width(context),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "NEXT",
-                      style: TextStyle(
-                          fontFamily: "notable",
-                          fontSize: 40,
-                          color: Config.colors.textColor),
-                    ),
-                    SizedBox(
-                      width: 3,
-                    ),
-                    Text(
-                      "ONE",
-                      style: TextStyle(
-                          fontFamily: "notable",
-                          fontSize: 40,
-                          color: Config.colors.secondaryColor),
-                    ),
-                  ],
-                ),
                 SizedBox(
                   height: 10,
                 ),
@@ -80,7 +86,7 @@ class _ChosePackageState extends State<ChosePackage> {
                         decoration: BoxDecoration(
                             color: Config.colors.primaryColor,
                             borderRadius: BorderRadius.circular(10)),
-                        width: width(context) * 0.58,
+                        width: width(context) * 0.6,
                         height: 360,
                         child: Padding(
                           padding: const EdgeInsets.all(10.0),
@@ -199,7 +205,7 @@ class _ChosePackageState extends State<ChosePackage> {
                         decoration: BoxDecoration(
                             color: Config.colors.secondaryColor,
                             borderRadius: BorderRadius.circular(10)),
-                        width: width(context) * 0.58,
+                        width: width(context) * 0.6,
                         height: 360,
                         child: Padding(
                           padding: const EdgeInsets.all(10.0),
@@ -322,13 +328,20 @@ class _ChosePackageState extends State<ChosePackage> {
                 SizedBox(
                   height: 20,
                 ),
-                _isSelectedPrestige || _isSelectedPool
-                    ? CButton(
-                        title: "Continuer",
-                        onPressed: () {
-                          route(context, PayementPage());
-                        })
-                    : Container()
+                // _isSelectedPrestige || _isSelectedPool
+                CButton(
+                    color: _isSelectedPrestige || _isSelectedPool
+                        ? Config.colors.primaryColor
+                        : Colors.grey[200],
+                    title: "Continuer",
+                    titleColor: _isSelectedPrestige || _isSelectedPool
+                        ? Config.colors.whithColor
+                        : Color.fromARGB(96, 0, 0, 0),
+                    onPressed: () {
+                      _isSelectedPrestige || _isSelectedPool
+                          ? route(context, PayementPage())
+                          : null;
+                    })
               ],
             ),
           ),
