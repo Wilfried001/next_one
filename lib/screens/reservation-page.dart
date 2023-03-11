@@ -296,7 +296,9 @@ class _ReservationsState extends State<Reservations> {
                                 },
                                 title: Text(
                                   "Dimanche",
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
                                 ),
                               ),
                             ),
